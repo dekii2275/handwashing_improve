@@ -229,6 +229,8 @@ data/raw/*
 !data/raw/.gitkeep
 data/landmarks/*
 !data/landmarks/.gitkeep
+data/landmarks_baseline/
+results/paper_cnn_imputed/
 data/processed/*
 !data/processed/.gitkeep
 data/processed_*

@@ -31,10 +31,7 @@ from config import (
 )
 from src.dataset import build_sliding_windows, create_dataloader
 from src.evaluate import evaluate_test_set
-from src.extract_landmarks import (
-    HandLandmarkExtractor,
-    generate_synthetic_landmarks_for_annotation,
-)
+from src.extract_landmarks import HandLandmarkExtractor
 from src.features import FeatureStandardizer, extract_features
 from src.models import get_model
 from src.split_data import load_split
@@ -46,7 +43,8 @@ def prepare_video_landmarks(split_dict: dict, max_videos_per_split: int | None =
     """
     Ensure landmark .npz files exist for all videos across train, val, and test splits.
     If video file is downloaded, extracts using MediaPipe.
-    If video is not yet downloaded, generates landmarks conditioned on ground-truth JSON annotations.
+    Refuses synthetic-looking caches and missing videos rather than generating
+    label-conditioned landmarks in a research experiment.
     """
     LANDMARKS_DIR.mkdir(parents=True, exist_ok=True)
     extractor = None
@@ -63,6 +61,15 @@ def prepare_video_landmarks(split_dict: dict, max_videos_per_split: int | None =
             npz_path = LANDMARKS_DIR / f"{stem}.npz"
 
             if npz_path.exists():
+                with np.load(npz_path) as cached:
+                    confidence = cached["confidence"]
+                    if np.any(confidence == np.float32(0.9)) and np.all(
+                        (confidence == 0) | (confidence == np.float32(0.9))
+                    ):
+                        raise RuntimeError(
+                            f"Synthetic landmark fingerprint: {npz_path}. "
+                            "Use scripts/prepare_baseline_landmarks.py and scripts/run_paper_cnn.py."
+                        )
                 continue
 
             # Look for video file and annotation file
@@ -74,18 +81,14 @@ def prepare_video_landmarks(split_dict: dict, max_videos_per_split: int | None =
                 if alt_annot.exists():
                     annot_path = alt_annot
 
-            if video_path.exists():
+            if video_path.exists() and annot_path.exists():
                 if extractor is None:
                     extractor = HandLandmarkExtractor()
                 extractor.extract_from_video(
                     video_path, annot_path, output_path=npz_path
                 )
-            elif annot_path.exists():
-                generate_synthetic_landmarks_for_annotation(
-                    annot_path, output_path=npz_path
-                )
             else:
-                print(f"Warning: neither video nor annotation found for {stem}")
+                raise FileNotFoundError(f"Video or annotation missing for {stem}")
 
     if extractor is not None:
         extractor.close()
@@ -108,7 +111,7 @@ def load_split_features(
         stem = record["video_stem"]
         npz_path = LANDMARKS_DIR / f"{stem}.npz"
         if not npz_path.exists():
-            continue
+            raise FileNotFoundError(f"Missing landmark cache: {npz_path}")
 
         data = np.load(npz_path)
         coords = data["coords"]

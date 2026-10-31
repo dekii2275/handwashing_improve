@@ -1,0 +1,28 @@
+{
+  "seed": 42,
+  "epochs": 100,
+  "window": 48,
+  "stride": 1,
+  "original_detection_filter": true,
+  "pooling": "avg",
+  "batch_size": 256,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "loss": "unweighted_cross_entropy",
+  "weight_decay": 0,
+  "scheduler": null,
+  "device": "cpu",
+  "torch": "2.12.1+cpu",
+  "split_sha256": "428ccae21f27dbca212ab92342e3cf7c45ec3c2673bc1e5202aa9d849dbf1f8a",
+  "manifest_sha256": "8e98156d53c8f7b9c64d83604347dee1d2b0da48e0840524cc2d4df5ddb8bb09",
+  "script_sha256": "59dde2bcb06318f262950ed20c4f5fec3e001b0a4181841a38737aa18421f72c",
+  "provenance_counts": {
+    "extracted_from_video": 47,
+    "legacy_unverified": 165
+  },
+  "window_counts": {
+    "train": 22669,
+    "val": 3707,
+    "test": 4684
+  }
+}
