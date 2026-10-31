@@ -218,3 +218,59 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ==============================================================================
+# Project-specific ignores (Handwashing Movement Recognition)
+# ==============================================================================
+
+# Datasets, raw videos, parquets, extracted landmarks (>2.3 GB)
+data/raw/*
+!data/raw/.gitkeep
+data/landmarks/*
+!data/landmarks/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/processed_*
+data/*.npz
+data/*.parquet
+data/*.csv
+data/*.zip
+!data/README.md
+!data/.gitkeep
+
+# Temporary scratchpad & experiments
+scratch/
+
+# Large model binary weights (> 1MB) & training cache
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.parquet
+*.npz
+*.task
+
+# Allow the best model checkpoint and necessary test files
+!checkpoints/best_model_temporal_cnn.pt
+
+# Models training outputs
+models/*
+!models/reproduction_summary.csv
+
+# Virtual environments
+venv/
+venv*/
+.venv/
+env/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

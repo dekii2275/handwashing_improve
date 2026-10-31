@@ -1,0 +1,129 @@
+{
+  "model_name": "temporal_cnn",
+  "test_accuracy": 51.12226036440454,
+  "test_macro_f1": 51.84628958852934,
+  "reported_f1": 70.5,
+  "reported_acc": 70.3,
+  "classification_report": {
+    "Class 0: Other / non-WHO": {
+      "precision": 0.459517554334846,
+      "recall": 0.5822363443788773,
+      "f1-score": 0.5136488019755723,
+      "support": 13218.0
+    },
+    "Class 1: Palm to palm": {
+      "precision": 0.6914428482198626,
+      "recall": 0.45340978906409996,
+      "f1-score": 0.5476808905380334,
+      "support": 4883.0
+    },
+    "Class 2: Palm over dorsum, fingers interlaced": {
+      "precision": 0.7943196004993758,
+      "recall": 0.5524202300846538,
+      "f1-score": 0.6516451158622456,
+      "support": 4607.0
+    },
+    "Class 3: Palm to palm, fingers interlaced": {
+      "precision": 0.3586974308623793,
+      "recall": 0.437962037962038,
+      "f1-score": 0.3943864699532206,
+      "support": 5005.0
+    },
+    "Class 4: Backs of fingers to opposing palm": {
+      "precision": 0.5879840546697038,
+      "recall": 0.5077452667814114,
+      "f1-score": 0.5449267713418657,
+      "support": 4067.0
+    },
+    "Class 5: Rotational rubbing of thumb": {
+      "precision": 0.4930327868852459,
+      "recall": 0.50996184824078,
+      "f1-score": 0.5013544488435091,
+      "support": 4718.0
+    },
+    "Class 6: Fingertips to palm": {
+      "precision": 0.5445,
+      "recall": 0.42217484008528783,
+      "f1-score": 0.4755977726826073,
+      "support": 5159.0
+    },
+    "accuracy": 0.5112226036440454,
+    "macro avg": {
+      "precision": 0.5613563250673448,
+      "recall": 0.4951300509424498,
+      "f1-score": 0.5184628958852934,
+      "support": 41657.0
+    },
+    "weighted avg": {
+      "precision": 0.5384800835607146,
+      "recall": 0.5112226036440454,
+      "f1-score": 0.5155192491505434,
+      "support": 41657.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      7696,
+      458,
+      204,
+      1753,
+      890,
+      1335,
+      882
+    ],
+    [
+      1408,
+      2214,
+      156,
+      595,
+      64,
+      172,
+      274
+    ],
+    [
+      1234,
+      64,
+      2545,
+      488,
+      9,
+      158,
+      109
+    ],
+    [
+      1957,
+      107,
+      223,
+      2192,
+      156,
+      130,
+      240
+    ],
+    [
+      1097,
+      3,
+      18,
+      341,
+      2065,
+      472,
+      71
+    ],
+    [
+      1505,
+      107,
+      11,
+      378,
+      65,
+      2406,
+      246
+    ],
+    [
+      1851,
+      249,
+      47,
+      364,
+      263,
+      207,
+      2178
+    ]
+  ]
+}
