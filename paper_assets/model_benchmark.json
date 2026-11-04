@@ -1,0 +1,9 @@
+{
+  "total_parameters": 234567,
+  "trainable_parameters": 234567,
+  "model_size_mb": 0.895,
+  "gpu_latency_ms": 0.95,
+  "gpu_fps": 1047.8,
+  "cpu_latency_ms": 8.19,
+  "cpu_fps": 122.0
+}
