@@ -1,0 +1,105 @@
+{
+  "accuracy": 0.8851109520400859,
+  "macro_f1": 0.7884581546445476,
+  "classification_report": {
+    "Step 1: Palm to palm": {
+      "precision": 0.6106870229007634,
+      "recall": 0.5970149253731343,
+      "f1-score": 0.6037735849056604,
+      "support": 134.0
+    },
+    "Step 2: Palm over dorsum": {
+      "precision": 0.9647519582245431,
+      "recall": 0.8494252873563218,
+      "f1-score": 0.9034229828850856,
+      "support": 870.0
+    },
+    "Step 3: Palm to palm interlaced": {
+      "precision": 0.6857142857142857,
+      "recall": 0.96,
+      "f1-score": 0.8,
+      "support": 100.0
+    },
+    "Step 4: Backs of fingers": {
+      "precision": 0.5666666666666667,
+      "recall": 0.7906976744186046,
+      "f1-score": 0.6601941747572816,
+      "support": 172.0
+    },
+    "Step 5: Thumb rubbing": {
+      "precision": 0.9345238095238095,
+      "recall": 0.7104072398190046,
+      "f1-score": 0.8071979434447301,
+      "support": 221.0
+    },
+    "Step 6: Fingertips rubbing": {
+      "precision": 0.9377316530763529,
+      "recall": 0.9753276792598303,
+      "f1-score": 0.9561602418745276,
+      "support": 1297.0
+    },
+    "accuracy": 0.8851109520400859,
+    "macro avg": {
+      "precision": 0.7833458993510701,
+      "recall": 0.8138121343711493,
+      "f1-score": 0.7884581546445476,
+      "support": 2794.0
+    },
+    "weighted avg": {
+      "precision": 0.8983436205822983,
+      "recall": 0.8851109520400859,
+      "f1-score": 0.887246826327195,
+      "support": 2794.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      80,
+      0,
+      0,
+      0,
+      0,
+      54
+    ],
+    [
+      47,
+      739,
+      44,
+      40,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      96,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      136,
+      6,
+      30
+    ],
+    [
+      0,
+      0,
+      0,
+      64,
+      157,
+      0
+    ],
+    [
+      4,
+      23,
+      0,
+      0,
+      5,
+      1265
+    ]
+  ]
+}
