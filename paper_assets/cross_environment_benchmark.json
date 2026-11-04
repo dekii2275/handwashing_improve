@@ -1,0 +1,35 @@
+{
+  "folds": [
+    {
+      "best_epoch": 12,
+      "best_val_f1": 0.7549739342333748,
+      "test_acc": 0.7730084519515023,
+      "test_macro_f1": 0.7744143904239666,
+      "test_environment": "Interface_number_1",
+      "test_videos": 71,
+      "test_windows": 76787
+    },
+    {
+      "best_epoch": 1,
+      "best_val_f1": 0.776085375139402,
+      "test_acc": 0.7502386255170219,
+      "test_macro_f1": 0.7478370715355876,
+      "test_environment": "Interface_number_2",
+      "test_videos": 70,
+      "test_windows": 50288
+    },
+    {
+      "best_epoch": 13,
+      "best_val_f1": 0.813615067723111,
+      "test_acc": 0.6702348443473511,
+      "test_macro_f1": 0.6596023594824444,
+      "test_environment": "Interface_number_3",
+      "test_videos": 71,
+      "test_windows": 18310
+    }
+  ],
+  "mean_test_acc": 0.7312,
+  "std_test_acc": 0.0441,
+  "mean_test_macro_f1": 0.7273,
+  "std_test_macro_f1": 0.0491
+}

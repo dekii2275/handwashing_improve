@@ -1,0 +1,50 @@
+[
+  {
+    "best_epoch": 12,
+    "best_val_f1": 0.8234602388413267,
+    "test_acc": 0.7530646752148795,
+    "test_macro_f1": 0.7530484898761015,
+    "model": "1D Temporal CNN (Ivanovs et al.)",
+    "elapsed_s": 26.8
+  },
+  {
+    "best_epoch": 2,
+    "best_val_f1": 0.7993788963243742,
+    "test_acc": 0.7175919402564463,
+    "test_macro_f1": 0.7180344925879418,
+    "model": "Vanilla LSTM",
+    "elapsed_s": 34.2
+  },
+  {
+    "best_epoch": 4,
+    "best_val_f1": 0.8005964653406169,
+    "test_acc": 0.7144920388896717,
+    "test_macro_f1": 0.714246180594316,
+    "model": "Vanilla GRU",
+    "elapsed_s": 35.1
+  },
+  {
+    "best_epoch": 4,
+    "best_val_f1": 0.8581614609774926,
+    "test_acc": 0.745350147949838,
+    "test_macro_f1": 0.745213877304998,
+    "model": "Dilated TCN (Temporal ConvNet)",
+    "elapsed_s": 44.4
+  },
+  {
+    "best_epoch": 3,
+    "best_val_f1": 0.8192900345677624,
+    "test_acc": 0.7317880794701986,
+    "test_macro_f1": 0.7313180718552639,
+    "model": "Temporal Transformer (Self-Attn)",
+    "elapsed_s": 174.4
+  },
+  {
+    "best_epoch": 13,
+    "best_val_f1": 0.8285984350152663,
+    "test_acc": 0.7490136677469353,
+    "test_macro_f1": 0.7485241454344415,
+    "model": "Proposed BiLSTM + Temporal Attention",
+    "elapsed_s": 80.0
+  }
+]
